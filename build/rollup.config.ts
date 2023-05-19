@@ -1,63 +1,14 @@
-import { join, sep } from 'node:path'
+import { sep } from 'node:path'
 import type { RollupOptions } from 'rollup'
-import nodeResolve from '@rollup/plugin-node-resolve'
-import babel from '@rollup/plugin-babel'
-import commonjs from '@rollup/plugin-commonjs'
 import terser from '@rollup/plugin-terser'
-import cleanup from 'rollup-plugin-cleanup'
-import typescript from '@rollup/plugin-typescript'
-import json from '@rollup/plugin-json'
-import alias, { type ResolverObject } from '@rollup/plugin-alias'
 import filesize from 'rollup-plugin-filesize'
-import { visualizer } from 'rollup-plugin-visualizer'
 import pkg from '../package.json' assert { type: 'json' }
 import { banner, extensions, reporter } from './config'
 
-const nodeResolver = nodeResolve({
-	// Use the `package.json` "browser" field
-	browser: false,
-	extensions,
-	preferBuiltins: true,
-	exportConditions: ['node'],
-	moduleDirectories: ['node_modules']
-})
 const iifeGlobals = {}
 
 const options: RollupOptions = {
-	plugins: [
-		alias({
-			customResolver: nodeResolver as ResolverObject,
-			entries: [
-				// {
-				//     find: /^#lib(.+)$/,
-				//     replacement: resolve(__dirname, '..', 'src', '$1.mjs')
-				// }
-			]
-		}),
-		nodeResolver,
-		commonjs({
-			sourceMap: false,
-			exclude: ['core-js']
-		}),
-		json(),
-		babel({
-			babelHelpers: 'bundled',
-			extensions,
-			exclude: [/node_modules[\\/]core-js/]
-		}),
-		typescript({
-			filterRoot: join(process.cwd(), 'src'),
-			compilerOptions: {
-				declaration: false,
-				sourceMap: true
-			}
-		}),
-		cleanup({
-			comments: 'all'
-		}),
-		filesize({ reporter }),
-		visualizer()
-	]
+	plugins: [filesize({ reporter })]
 }
 
 function externalCjsEsm(id: string) {
@@ -145,18 +96,6 @@ export default (process.env.BABEL_ENV !== 'es5'
 			}
 		],
 		external: externalUmd,
-		plugins: [
-			nodeResolver,
-			commonjs({
-				sourceMap: false,
-				exclude: ['core-js']
-			}),
-			json(),
-			cleanup({
-				comments: 'all'
-			}),
-			filesize({ reporter }),
-			visualizer()
-		]
+		plugins: [filesize({ reporter })]
 	}
 ])
