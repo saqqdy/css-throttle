@@ -8,16 +8,9 @@ A high-performance solution using css to prevent button double-clicking.
 [![Codacy Badge][codacy-image]][codacy-url]
 [![Test coverage][codecov-image]][codecov-url]
 [![npm download][download-image]][download-url]
-[![gzip][gzip-image]][gzip-url]
 [![License][license-image]][license-url]
 
 [![Sonar][sonar-image]][sonar-url]
-
-</div>
-
-<div style="text-align: center; margin-bottom: 20px;" align="center">
-
-### **[Documentation](https://www.saqqdy.com/css-throttle)** • **[Change Log](./CHANGELOG.md)**
 
 </div>
 
@@ -36,20 +29,35 @@ $ yarn add css-throttle
 
 ## Usage
 
+
 ### General use
 
-```js
-import cssThrottle from 'css-throttle'
+1. use import
+
+```ts
+import 'css-throttle'
+```
+
+2. use require
+
+```ts
+require('css-throttle')
+```
+
+### Import less file or scss file
+
+```ts
+// less
+import 'css-throttle/less'
+// scss
+import 'css-throttle/scss'
 ```
 
 ### Using unpkg CDN
 
 ```html
-<!-- for modern browser -->
-<script src="https://unpkg.com/css-throttle@1.0.0/dist/index.min.js"></script>
-
-<!-- for IE11 -->
-<script src="https://unpkg.com/css-throttle@1.0.0/dist/es5/index.min.js"></script>
+<!-- head -->
+<script src="https://unpkg.com/css-throttle@1.0.0/src/index.css"></script>
 ```
 
 ## Support & Issues
@@ -68,8 +76,6 @@ Please open an issue [here](https://github.com/saqqdy/css-throttle/issues).
 [codecov-url]: https://codecov.io/github/saqqdy/css-throttle?branch=master
 [download-image]: https://img.shields.io/npm/dm/css-throttle.svg?style=flat-square
 [download-url]: https://npmjs.org/package/css-throttle
-[gzip-image]: http://img.badgesize.io/https://unpkg.com/css-throttle/dist/index.min.js?compression=gzip&label=gzip%20size:%20JS
-[gzip-url]: http://img.badgesize.io/https://unpkg.com/css-throttle/dist/index.min.js?compression=gzip&label=gzip%20size:%20JS
 [license-image]: https://img.shields.io/badge/License-MIT-blue.svg
 [license-url]: LICENSE
 [sonar-image]: https://sonarcloud.io/api/project_badges/quality_gate?project=saqqdy_css-throttle
