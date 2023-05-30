@@ -29,28 +29,40 @@ $ yarn add css-throttle
 
 ## Usage
 
-
 ### General use
 
-1. use import
+step 1: import the styles
 
 ```ts
+// use import
 import 'css-throttle'
-```
-
-2. use require
-
-```ts
+// or use require
 require('css-throttle')
 ```
 
-### Import less file or scss file
+Import less file or scss file
 
 ```ts
 // less
 import 'css-throttle/less'
 // scss
 import 'css-throttle/scss'
+```
+
+step 2: Add a className "throttle" to the dom that needs to use throttling
+
+```html
+<button onclick="console.log('common save')">I am a "common" save</button>
+<button class="throttle" onclick="console.log('throttle save')">I am a "throttle" save</button>
+```
+
+### Use css var to define the transparency of the motion time and inactive state
+
+```css
+:root {
+    --css-throttle-delay: 2s;
+    --css-throttle-opacity: 0.65;
+}
 ```
 
 ### Using unpkg CDN
