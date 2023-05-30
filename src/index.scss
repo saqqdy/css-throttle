@@ -1,5 +1,5 @@
 .throttle {
-	animation: throttle 2s step-end forwards;
+	animation: throttle var(--css-throttle-delay, 1.2s) step-end forwards;
 }
 .throttle:active {
 	animation: none;
@@ -7,7 +7,7 @@
 @keyframes throttle {
 	from {
 		pointer-events: none;
-		opacity: 0.65;
+		opacity: var(--css-throttle-opacity, 0.75);
 	}
 	to {
 		pointer-events: all;
