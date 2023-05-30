@@ -2,7 +2,7 @@
 	"name": "css-throttle",
 	"description": "A high-performance solution using css to prevent button double-clicking.",
 	"type": "module",
-	"version": "1.0.0-beta.1",
+	"version": "1.0.0-beta.2",
 	"packageManager": "pnpm@8.6.0",
 	"main": "src/css.js",
 	"module": "src/css.mjs",
@@ -32,6 +32,7 @@
 	},
 	"files": [
 		"dist",
+		"src",
 		"typings"
 	],
 	"scripts": {
