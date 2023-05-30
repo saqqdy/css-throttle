@@ -56,7 +56,7 @@ step 2: Add a className "throttle" to the dom that needs to use throttling
 <button class="throttle" onclick="console.log('throttle save')">I am a "throttle" save</button>
 ```
 
-### Use css var to define the transparency of the motion time and inactive state
+### Use css variables to define the transparency of the motion time and inactive state
 
 ```css
 :root {
