@@ -35,9 +35,9 @@
 		"typings"
 	],
 	"scripts": {
-		"pub": "tscjs scripts/publish",
-		"unpub": "tscjs scripts/unpublish",
-		"sync": "tscjs scripts/sync",
+		"pub": "node --loader @esbuild-kit/esm-loader scripts/publish",
+		"unpub": "node --loader @esbuild-kit/esm-loader scripts/unpublish",
+		"sync": "node --loader @esbuild-kit/esm-loader scripts/sync",
 		"workflow:publish-test": "zx scripts/workflow.mjs",
 		"clean": "rm-all dist es lib",
 		"dist": "run-s eslint prettier",
@@ -45,6 +45,7 @@
 		"prettier": "prettier --write \"**/*.{js,ts,jsx,tsx,yml,json,md}\""
 	},
 	"devDependencies": {
+		"@esbuild-kit/esm-loader": "^2.5.5",
 		"@eslint-sets/eslint-config-basic": "^5.2.0",
 		"@node-kit/extra.fs": "^2.5.1",
 		"@types/node": "^20.2.1",
@@ -55,7 +56,6 @@
 		"prettier-config-common": "^1.4.0",
 		"reinstaller": "^3.0.0",
 		"rm-all": "^1.0.0",
-		"tsnd": "^1.1.0",
 		"typescript": "^5.0.4",
 		"zx": "^7.2.2"
 	},
