@@ -1,16 +1,28 @@
 .throttle {
-	animation: throttle var(--css-throttle-delay, 1.2s) step-end forwards;
+  -webkit-animation: throttle var(--css-throttle-delay, 1.2s) step-end forwards;
+          animation: throttle var(--css-throttle-delay, 1.2s) step-end forwards;
 }
 .throttle:active {
-	animation: none;
+  -webkit-animation: none;
+          animation: none;
+}
+@-webkit-keyframes throttle {
+  from {
+    pointer-events: none;
+    opacity: var(--css-throttle-opacity, 0.75);
+  }
+  to {
+    pointer-events: all;
+    opacity: 1;
+  }
 }
 @keyframes throttle {
-	from {
-		pointer-events: none;
-		opacity: var(--css-throttle-opacity, 0.75);
-	}
-	to {
-		pointer-events: all;
-		opacity: 1;
-	}
+  from {
+    pointer-events: none;
+    opacity: var(--css-throttle-opacity, 0.75);
+  }
+  to {
+    pointer-events: all;
+    opacity: 1;
+  }
 }

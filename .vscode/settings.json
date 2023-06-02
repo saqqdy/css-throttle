@@ -9,6 +9,7 @@
 		"esbuild",
 		"filesize",
 		"gitmars",
+		"gulpfile",
 		"hooks-demi",
 		"iife",
 		"instanceof",

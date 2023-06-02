@@ -1,4 +1,4 @@
 module.exports = {
-	extends: '@eslint-sets/basic',
+	extends: '@eslint-sets/ts',
 	rules: {}
 }
