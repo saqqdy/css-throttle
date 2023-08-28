@@ -50,7 +50,7 @@
 		"@esbuild-kit/cjs-loader": "^2.4.2",
 		"@esbuild-kit/esm-loader": "^2.5.5",
 		"@eslint-sets/eslint-config-ts": "^5.2.0",
-		"@node-kit/extra.fs": "^2.5.1",
+		"@node-kit/extra.fs": "^3.2.0",
 		"@types/gulp": "^4.0.11",
 		"@types/gulp-autoprefixer": "^0.0.34",
 		"@types/gulp-less": "^0.0.33",
